@@ -1,60 +1,37 @@
 import React from "react";
-import { ApiService } from "../utils";
+import { Container, Header } from "../components";
+import { BlogList } from "../components/blog";
+import { getBlogData, getUserData } from "../utils";
 
-const GET_BLOG = `
-  {
-    repository(owner: "bufgix", name: "bufgix.github.io") {
-      issues(first: 100, states: OPEN, filterBy: { labels: "blog" }) {
-        nodes {
-          title
-          body
-          bodyHTML
-          bodyText
-          number
-          labels(first: 100) {
-            nodes {
-              color
-              name
-              id
-            }
-          }
-          author {
-            url
-            avatarUrl
-            login
-          }
-          updatedAt
-          id
-        }
-      }
-    }
+function Blog({ blogData, profileData, errors }) {
+  if (errors) {
+    return errors.map(err => <p>{JSON.stringify(err)}</p>);
   }
-`;
-
-function Blog({ status, blogData, error }) {
-  if (status === "OK") {
-    return blogData.map((blog, index) => (
-      <div key={index}>
-        <h1>{blog.title}</h1>
-      </div>
-    ));
-  } else {
-    return <p>{error}</p>;
-  }
+  return (
+    <React.Fragment>
+      <Header profile={profileData} />
+      <Container>
+        <BlogList data={blogData} />
+      </Container>
+    </React.Fragment>
+  );
 }
 
 export async function getStaticProps() {
   try {
-    const res = await ApiService.post("/graphql", { query: GET_BLOG });
+    const [blogData, profileData] = await Promise.all([
+      getBlogData(),
+      getUserData()
+    ]);
     return {
       props: {
-        blogData: res.data.data?.repository?.issues?.nodes,
-        status: "OK"
+        blogData,
+        profileData
       }
     };
   } catch (error) {
     return {
-      props: { status: "FAIL", error: error.message }
+      props: { errors: error.errors }
     };
   }
 }

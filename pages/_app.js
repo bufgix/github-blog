@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-function App({ Component, pageProps, apollo }) {
+function App({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>

@@ -1,6 +1,7 @@
 import React from "react";
 import Moment from "moment";
 import readingTime from "reading-time";
+import elipsis from "text-ellipsis";
 
 function BlogList({ data }) {
   return data.map((blog, index) => (
@@ -42,6 +43,12 @@ function BlogCard({ data }) {
             .fromNow()}{" "}
           | {readingTime(data.bodyText).text}
         </div>
+      </div>
+      <p>{elipsis(data.bodyText, 300)}</p>
+      <div>
+        <a className="uk-button uk-button-text" href="#">
+          Read more
+        </a>
       </div>
     </div>
   );

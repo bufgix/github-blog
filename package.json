@@ -22,6 +22,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "reading-time": "^1.2.0",
+    "text-ellipsis": "^1.0.3",
     "uikit": "^3.3.6"
   },
   "devDependencies": {},

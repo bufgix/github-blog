@@ -47,7 +47,7 @@ function BlogCard({ data }) {
       </div>
       <p>{elipsis(data.bodyText, 300)}</p>
 
-      <Link href={`/blog/${data.title}`}>
+      <Link href={{pathname: `/blog/${data.title}/${data.number}`}}>
         <div className="uk-button uk-button-text">Read more</div>
       </Link>
     </div>

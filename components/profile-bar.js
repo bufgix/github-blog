@@ -38,13 +38,23 @@ function ProfileBar({ className }) {
         </div>
       </div>
       <div
-        className="uk-grid-small uk-margin-small-top uk-flex-center "
+        className="uk-grid-small uk-margin-small-top uk-flex-center uk-text-middle"
         uk-grid="true"
       >
         {profile.email && (
           <div className="uk-text-meta">
-            <span uk-icon="icon: mail" />
-            <span className="uk-visible@m">{profile.email}</span>
+            <a href={`mailto:${profile.email}`}>
+              <span uk-icon="icon: mail" />
+              <span className="uk-visible@m"> {profile.email}</span>
+            </a>
+          </div>
+        )}
+        {profile.websiteUrl && (
+          <div className="uk-text-meta">
+            <a href={profile.websiteUrl}>
+              <span uk-icon="icon: home" />
+              <span className="uk-visible@m "> {profile.websiteUrl}</span>
+            </a>
           </div>
         )}
         {profile.location && (

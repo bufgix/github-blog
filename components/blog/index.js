@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Moment from "moment";
 import readingTime from "reading-time";
 import elipsis from "text-ellipsis";
@@ -45,11 +46,10 @@ function BlogCard({ data }) {
         </div>
       </div>
       <p>{elipsis(data.bodyText, 300)}</p>
-      <div>
-        <a className="uk-button uk-button-text" href="#">
-          Read more
-        </a>
-      </div>
+
+      <Link href={`/blog/${data.title}`}>
+        <div className="uk-button uk-button-text">Read more</div>
+      </Link>
     </div>
   );
 }

@@ -7,8 +7,6 @@ const GET_BLOG = `
       issues(first: 100, states: OPEN, filterBy: { labels: "blog", createdBy: "${config.username}" }) {
         nodes {
           title
-          body
-          bodyHTML
           bodyText
           number
           labels(first: 100) {
@@ -26,6 +24,30 @@ const GET_BLOG = `
   }
 `;
 
+const GET_SINGLE_BLOG = number => `
+{
+  repository(owner: "${config.username}", name: "${config.repoName}") {
+    issue(number: ${number}){
+      title
+      body
+      bodyHTML
+      url
+      bodyText
+      number
+      bodyHTML
+      labels(first: 100) {
+        nodes {
+          color
+          name
+          id
+        }
+      }
+      updatedAt
+    }
+  }
+}
+`;
+
 const GET_USER = `
 {
   user(login: "${config.username}"){
@@ -37,7 +59,6 @@ const GET_USER = `
   }
 }
 `;
-
 const ApiService = Axios.create({
   baseURL: "https://api.github.com",
   headers: {
@@ -69,5 +90,19 @@ const getUserData = async () => {
   }
 };
 
-export { getBlogData, getUserData };
+const getSingleBlogData = async number => {
+  try {
+    const res = await ApiService.post("/graphql", {
+      query: GET_SINGLE_BLOG(number)
+    });
+    if (res.data.errors) {
+      return Promise.reject({ errors: res.data.errors });
+    }
+    return Promise.resolve(res.data.data?.repository?.issue);
+  } catch (err) {
+    return Promise.reject({ error: err.message });
+  }
+};
+
+export { getBlogData, getUserData, getSingleBlogData };
 export default ApiService;

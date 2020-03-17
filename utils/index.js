@@ -1,4 +1,4 @@
 import ApiService from "./ApiService";
-import { getBlogData, getUserData } from "./ApiService";
+import { getBlogData, getUserData, getSingleBlogData } from "./ApiService";
 
-export { ApiService, getBlogData, getUserData };
+export { ApiService, getBlogData, getUserData, getSingleBlogData};

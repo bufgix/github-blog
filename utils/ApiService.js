@@ -4,7 +4,7 @@ import config from "../config";
 const GET_BLOG = `
   {
     repository(owner: "${config.username}", name: "${config.repoName}") {
-      issues(first: 100, states: OPEN, filterBy: { labels: "blog" }) {
+      issues(first: 100, states: OPEN, filterBy: { labels: "blog", createdBy: "${config.username}" }) {
         nodes {
           title
           body

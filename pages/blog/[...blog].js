@@ -1,12 +1,15 @@
 import React from "react";
-import { Container } from "../../components";
+import { Container, ProfileBar } from "../../components";
 import { getSingleBlogData, getBlogData } from "../../utils";
+import renderHTML from "react-render-html";
 
 function DetailView({ blogData }) {
   return (
     <Container className="uk-margin-top">
       <article className="uk-article">
-        <h1 class="uk-article-title">{blogData.title}</h1>
+        <h1 className="uk-article-title">{blogData.title}</h1>
+        <ProfileBar className="uk-margin-top uk-margin-bottom" />
+        <div>{renderHTML(blogData.bodyHTML)}</div>
       </article>
     </Container>
   );

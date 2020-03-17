@@ -55,7 +55,10 @@ const GET_USER = `
     name,
     email,
     url,
-    avatarUrl
+    avatarUrl,
+    company,
+    location,
+    websiteUrl
   }
 }
 `;

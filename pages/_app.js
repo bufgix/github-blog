@@ -19,6 +19,7 @@ function App({ Component, pageProps }) {
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
       <Component {...pageProps} />

@@ -7,10 +7,6 @@ import renderHTML from "react-render-html";
 function DetailView({ blogData, router }) {
   return (
     <Container className="uk-margin-top">
-      {/*       <span
-        uk-icon="icon: location"
- 
-      /> */}
       <ion-icon
         name="arrow-back-outline"
         size="large"

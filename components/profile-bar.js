@@ -2,6 +2,7 @@ import React from "react";
 import { getUserData } from "../utils";
 
 function ProfileBar({ className }) {
+  // TODO: add loading
   const [profile, setProfile] = React.useState({});
   const [loading, setLoading] = React.useState(true);
 

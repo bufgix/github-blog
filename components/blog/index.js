@@ -42,7 +42,7 @@ function BlogCard({ data }) {
           {Moment(data.updatedAt)
             .startOf("day")
             .fromNow()}{" "}
-          | {readingTime(data.bodyText).text}
+          •  {readingTime(data.bodyText).text}
         </div>
       </div>
       <p>{elipsis(data.bodyText, 300)}</p>

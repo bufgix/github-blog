@@ -3,7 +3,9 @@ import { withRouter } from "next/router";
 import { Container, ProfileBar } from "../../components";
 import { getSingleBlogData, getBlogData } from "../../utils";
 import renderHTML from "react-render-html";
-import "./detail.scss"
+import Moment from "moment";
+import readingTime from "reading-time";
+import "./detail.scss";
 
 function DetailView({ blogData, router }) {
   return (
@@ -11,13 +13,19 @@ function DetailView({ blogData, router }) {
       <ion-icon
         name="arrow-back-outline"
         size="large"
-        style={{cursor: "pointer"}}
+        style={{ cursor: "pointer" }}
         onClick={() => {
           router.replace("/");
         }}
       ></ion-icon>
       <article className="uk-article">
         <h1 className="uk-article-title">{blogData.title}</h1>
+        <span className="uk-text-light">
+          {readingTime(blogData.bodyText).text} •{" "}
+          {Moment(blogData.updatedAt)
+            .startOf("day")
+            .fromNow()}{" "}
+        </span>
         <ProfileBar className="uk-margin-top uk-margin-bottom" />
         <div>{renderHTML(blogData.bodyHTML)}</div>
       </article>

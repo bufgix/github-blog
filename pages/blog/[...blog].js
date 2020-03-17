@@ -3,6 +3,7 @@ import { withRouter } from "next/router";
 import { Container, ProfileBar } from "../../components";
 import { getSingleBlogData, getBlogData } from "../../utils";
 import renderHTML from "react-render-html";
+import "./detail.scss"
 
 function DetailView({ blogData, router }) {
   return (

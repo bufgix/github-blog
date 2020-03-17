@@ -23,6 +23,7 @@ export async function getStaticProps() {
       getBlogData(),
       getUserData()
     ]);
+    blogData.reverse();
     return {
       props: {
         blogData,

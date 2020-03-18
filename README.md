@@ -72,17 +72,6 @@ Blogunuz istediğiniz bir VPS'de yayınlayabilceğiniz gibi, Ben hem kolay hem d
 $ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
 ```
 
-Son olarak `now.json` adlı bir dosya oluşturup içine
-
-```json
-{
-    "build": {
-        "env": {
-            "GITHUB_TOKEN": "@github_token"
-        }
-    }
-}
-```
 
 Uygulamanızı şu komutla yayına alın
 
@@ -90,6 +79,13 @@ Uygulamanızı şu komutla yayına alın
 $ now deploy
 ```
 Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) dan uygulamayı takip edebilirsiniz.
+
+
+## Yazı Yayınlama
+`config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
+
+
+Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim. Temelde aynı şeyi yapıyor olsa da Projeyi [Next.js](https://nextjs.org/) ile yazarak SEO friendly olmasını sağladım.
 
 ## Author
 

@@ -89,7 +89,7 @@ Uygulamanızı şu komutla yayına alın
 ```sh
 $ now deploy
 ```
-Proje isminizi kendinize göre ayarladıktan sonra zeit.co dan uygulamayı takip edebilirsiniz.
+Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) dan uygulamayı takip edebilirsiniz.
 
 ## Author
 

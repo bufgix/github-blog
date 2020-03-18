@@ -14,13 +14,6 @@ function BlogList({ data }) {
 }
 
 function BlogCard({ data }) {
-  /*   return (
-    <div className="uk-card uk-card-default uk-card-small uk-card-body uk-card-hover uk-margin-bottom">
-      <div className="uk-badge uk-label">Badge</div>
-      <div className="uk-card-title">{data.title}</div>
-      <div className="uk-card-body">{elipsis(data.bodyText, 200)}</div>
-    </div>
-  ); */
   return (
     <div>
       <Link

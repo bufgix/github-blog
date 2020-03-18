@@ -41,7 +41,6 @@ function ProfileBar({ className }) {
     <div
       className={`uk-card uk-card-default uk-card-body  uk-padding-small ${className}`}
     >
-      {/*   <BarLoader /> */}
       {loading ? (
         <BarLoader />
       ) : (

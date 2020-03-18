@@ -39,8 +39,7 @@ function BlogCard({ data }) {
             ))}
         </div>
         <div className="uk-text-meta">
-          {Moment(data.updatedAt)
-            .startOf("day")
+          {Moment(data.createdAt)
             .fromNow()}{" "}
           •  {readingTime(data.bodyText).text}
         </div>

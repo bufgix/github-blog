@@ -15,6 +15,10 @@ function App({ Component, pageProps }) {
         />
         <link
           rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/nord.min.css"
+        />
+        <link
+          rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />

@@ -17,6 +17,7 @@ const GET_BLOG = `
             }
           }
           updatedAt
+          createdAt
           id
         }
       }
@@ -43,6 +44,7 @@ const GET_SINGLE_BLOG = number => `
         }
       }
       updatedAt
+      createdAt
     }
   }
 }

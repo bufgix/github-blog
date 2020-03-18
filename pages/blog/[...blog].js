@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "next/router";
 import { Container, ProfileBar } from "../../components";
-import { getSingleBlogData, getBlogData } from "../../utils";
+import { getSingleBlogData, redirect } from "../../utils";
 import Markdown from "markdown-to-jsx";
 import Moment from "moment";
 import readingTime from "reading-time";
@@ -37,7 +37,7 @@ function DetailView({ blogData, router }) {
   );
 }
 
-DetailView.getInitialProps = async ({ query: { blog } }) => {
+DetailView.getInitialProps = async ({ query: { blog }, res }) => {
   const [_, blogNumber] = blog;
   try {
     const blogData = await getSingleBlogData(blogNumber);
@@ -45,9 +45,7 @@ DetailView.getInitialProps = async ({ query: { blog } }) => {
       blogData
     };
   } catch (err) {
-    return {
-      errors: err.errors
-    };
+    redirect({ res, location: `/?notFound=true` });
   }
 };
 

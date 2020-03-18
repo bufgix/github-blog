@@ -23,7 +23,12 @@ function BlogCard({ data }) {
   ); */
   return (
     <div>
-      <h2 className="uk-heading-bullet">{data.title}</h2>
+      <Link
+        className="uk-heading-bullet"
+        href={{ pathname: `/blog/${data.title}/${data.number}` }}
+      >
+        <h2 style={{ cursor: "pointer" }}>{data.title}</h2>
+      </Link>
       <div className="uk-flex uk-flex-between uk-text-middle">
         <div>
           {data.labels.nodes
@@ -39,14 +44,12 @@ function BlogCard({ data }) {
             ))}
         </div>
         <div className="uk-text-meta">
-          {Moment(data.createdAt)
-            .fromNow()}{" "}
-          •  {readingTime(data.bodyText).text}
+          {Moment(data.createdAt).fromNow()} • {readingTime(data.bodyText).text}
         </div>
       </div>
       <p>{elipsis(data.bodyText, 300)}</p>
 
-      <Link href={{pathname: `/blog/${data.title}/${data.number}`}}>
+      <Link href={{ pathname: `/blog/${data.title}/${data.number}` }}>
         <div className="uk-button uk-button-text">Read more</div>
       </Link>
     </div>

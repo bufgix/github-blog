@@ -15,17 +15,81 @@
 
 ### 🏠 [Homepage](https://github-blog.now.sh/)
 
-## Install
+![banner](https://i.hizliresim.com/O5vCIe.png)
+
+Bildiğiniz blog sistemi fakat backendinin tamamı Github altyapısına bağlı. Tüm blog yazıları istediğiniz bir reponun issue'lerine bağlı.
+
+## Yükleme
+Repoyu dosya sistemimize indirin
+
+```sh
+$ git clone https://github.com/bufgix/github-blog && cd github-blog
+```
+
+Gerekli bağımlıkları yükleyin
+
+```sh
+$ yarn
+# veya
+$ npm install
+```
+
+ardından `config.js` dosyasına gelip bilgilerinizi yazın
+
+```javascript
+export default {
+   // Github kullanıcı adınız
+  username: "bufgix", 
+   // Profilinize bağlı ve bloglarınızı yazacağınız repo ismi
+  repoName: "bufgix.github.io"  
+};
+```
+
+Github-blog, verileri çekmek için graphql kullanan [Github API V4](https://developer.github.com/v4/)'ü kullanıyor. Bu yüzden [Github access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)'e ihtiyaç var. Bir token oluşturup;
+- read:user
+- user:email
+- user:follow
+
+izinlerini vemelisiniz. 
+
+Token'i kopyalayın ve `.env` isminde bir dosya içine aşağıdaki gibi yapıştırın
+```env
+GITHUB_TOKEN=0f49a4540d7efc7272533bc5ba23243da8de8ecd
+```
+Ardından blogunuzu localde çalıştırmak için
 
 ```sh
 yarn dev
+# veya 
+npm run dev
 ```
 
-## Usage
+## Uygulamayı yayınlama
+
+Blogunuz istediğiniz bir VPS'de yayınlayabilceğiniz gibi, Ben hem kolay hem de ücretsiz olan [zeit.co](https://zeit.co/)'yu kullanıyoum. Blogunuzu zeit'e yüklemek için [Now CLI](https://zeit.co/download)'yi indirin. Ardından github tokeni `Now CLI`'a ekleyin
 
 ```sh
-yarn run start
+$ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
 ```
+
+Son olarak `now.json` adlı bir dosya oluşturup içine
+
+```json
+{
+    "build": {
+        "env": {
+            "GITHUB_TOKEN": "@github_token"
+        }
+    }
+}
+```
+
+Uygulamanızı şu komutla yayına alın
+
+```sh
+$ now deploy
+```
+Proje isminizi kendinize göre ayarladıktan sonra zeit.co dan uygulamayı takip edebilirsiniz.
 
 ## Author
 

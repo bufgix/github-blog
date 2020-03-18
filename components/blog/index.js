@@ -16,11 +16,10 @@ function BlogList({ data }) {
 function BlogCard({ data }) {
   return (
     <div>
-      <Link
-        className="uk-heading-bullet"
-        href={{ pathname: `/blog/${data.title}/${data.number}` }}
-      >
-        <h2 style={{ cursor: "pointer" }}>{data.title}</h2>
+      <Link href={{ pathname: `/blog/${data.title}/${data.number}` }}>
+        <h2 className="uk-heading-bullet" style={{ cursor: "pointer" }}>
+          {data.title}
+        </h2>
       </Link>
       <div className="uk-flex uk-flex-between uk-text-middle">
         <div>

@@ -90,6 +90,7 @@ Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim.
 ## TODOS
 - Yorum ve reaction entegrasyonu
 - Pagination
+- Error Handling
 
 ## Author
 

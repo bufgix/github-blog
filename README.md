@@ -84,8 +84,12 @@ Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) da
 ## Yazı Yayınlama
 `config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
 
-
+---
 Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim. Temelde aynı şeyi yapıyor olsa da Projeyi [Next.js](https://nextjs.org/) ile yazarak SEO friendly olmasını sağladım.
+
+## TODOS
+- Yorum ve reaction entegrasyonu
+- Pagination
 
 ## Author
 

@@ -27,8 +27,8 @@ function DetailView({ blogData, router }) {
         <h1 className="uk-article-title">{blogData.title}</h1>
         <span className="uk-text-light">
           {readingTime(blogData.bodyText).text} •{" "}
-          {Moment(blogData.createdAt).fromNow()}{" "}•
-          Edited {Moment(blogData.updatedAt).fromNow()}
+          {Moment(blogData.createdAt).fromNow()} • Edited{" "}
+          {Moment(blogData.updatedAt).fromNow()}
         </span>
         <ProfileBar className="uk-margin-top uk-margin-bottom" />
         <Markdown options={{ forceBlock: true }}>{blogData.body}</Markdown>
@@ -37,35 +37,18 @@ function DetailView({ blogData, router }) {
   );
 }
 
-export async function getStaticPaths() {
-  try {
-    const blogData = await getBlogData();
-    const paths = blogData.map(blog => ({
-      params: { blog: [blog.title, blog.number] }
-    }));
-    return {
-      fallback: false,
-      paths
-    };
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-export async function getStaticProps({ params: { blog } }) {
+DetailView.getInitialProps = async ({ query: { blog } }) => {
   const [_, blogNumber] = blog;
   try {
     const blogData = await getSingleBlogData(blogNumber);
     return {
-      props: {
-        blogData
-      }
+      blogData
     };
   } catch (err) {
     return {
-      props: { errors: err.errors }
+      errors: err.errors
     };
   }
-}
+};
 
 export default withRouter(DetailView);

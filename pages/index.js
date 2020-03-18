@@ -17,7 +17,7 @@ function Blog({ blogData, profileData, errors }) {
   );
 }
 
-export async function getStaticProps() {
+Blog.getInitialProps = async () => {
   try {
     const [blogData, profileData] = await Promise.all([
       getBlogData(),
@@ -25,15 +25,13 @@ export async function getStaticProps() {
     ]);
     blogData.reverse();
     return {
-      props: {
-        blogData,
-        profileData
-      }
+      blogData,
+      profileData
     };
   } catch (error) {
     return {
-      props: { errors: error.errors }
+      errors: error.errors
     };
   }
-}
+};
 export default Blog;

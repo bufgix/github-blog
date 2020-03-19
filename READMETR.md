@@ -69,7 +69,7 @@ npm run dev
 Blogunuz istediğiniz bir VPS'de yayınlayabilceğiniz gibi, Ben hem kolay hem de ücretsiz olan [zeit.co](https://zeit.co/)'yu kullanıyoum. Blogunuzu zeit'e yüklemek için [Now CLI](https://zeit.co/download)'yi indirin. Ardından github tokeni, `Now CLI`'a ekleyin
 
 ```sh
-$ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
+$ now secrets add GITHUB_TOKEN <YOUR_GITHUB_TOKEN>
 ```
 
 

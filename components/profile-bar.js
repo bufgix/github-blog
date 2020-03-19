@@ -1,6 +1,7 @@
 import React from "react";
 import { getUserData } from "../utils";
 import ContentLoader from "react-content-loader";
+import config from "../config";
 
 const BarLoader = () => (
   <ContentLoader
@@ -56,7 +57,13 @@ function ProfileBar({ className }) {
             </div>
 
             <div className="uk-width-expand">
-              <div className="uk-text-lead">{profile.name}</div>
+              <div className="uk-text-lead">
+                {profile.name}
+                {"  "}
+                <span className="uk-text-small uk-text-muted">
+                  {config.username}
+                </span>
+              </div>
               <p className="uk-text-small uk-margin-remove-top">
                 {profile.bio}
               </p>

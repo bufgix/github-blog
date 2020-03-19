@@ -17,6 +17,8 @@
 
 ![banner](https://i.hizliresim.com/O5vCIe.png)
 
+[TURKÇE](https://github.com/bufgix/github-blog/blob/master/READMETR.md)
+
 The blog system you know, but all of the backends is connected to the Github. All blog posts are linked to the issues of a repo that you want.
 
 ## Installation

@@ -8,6 +8,7 @@ import readingTime from "reading-time";
 import hljs from "highlight.js";
 
 import "./detail.scss";
+import Footer from "../../components/footer";
 
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
@@ -33,6 +34,7 @@ function DetailView({ blogData, router }) {
         <ProfileBar className="uk-margin-top uk-margin-bottom" />
         <Markdown options={{ forceBlock: true }}>{blogData.body}</Markdown>
       </article>
+      <Footer />
     </Container>
   );
 }

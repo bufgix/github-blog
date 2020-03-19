@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Header } from "../components";
 import { BlogList } from "../components/blog";
 import { getBlogData, getUserData } from "../utils";
+import Footer from "../components/footer";
 
 function Blog({ blogData, profileData, errors }) {
   if (errors) {
@@ -12,6 +13,7 @@ function Blog({ blogData, profileData, errors }) {
       <Header profile={profileData} />
       <Container>
         <BlogList data={blogData} />
+        <Footer />
       </Container>
     </React.Fragment>
   );

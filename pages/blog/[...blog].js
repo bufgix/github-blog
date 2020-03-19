@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "next/router";
 import { Container, ProfileBar } from "../../components";
 import { getSingleBlogData, redirect } from "../../utils";
+import ModalImage from "react-modal-image";
 import Markdown from "markdown-to-jsx";
 import Moment from "moment";
 import readingTime from "reading-time";
@@ -9,6 +10,10 @@ import hljs from "highlight.js";
 
 import "./detail.scss";
 import Footer from "../../components/footer";
+
+function FullScreenImage({ ...props }) {
+  return <ModalImage small={props.src} large={props.src} />;
+}
 
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
@@ -32,7 +37,18 @@ function DetailView({ blogData, router }) {
           {Moment(blogData.updatedAt).fromNow()}
         </span>
         <ProfileBar className="uk-margin-top uk-margin-bottom" />
-        <Markdown options={{ forceBlock: true }}>{blogData.body}</Markdown>
+        <Markdown
+          options={{
+            forceBlock: true,
+            overrides: {
+              img: {
+                component: FullScreenImage
+              }
+            }
+          }}
+        >
+          {blogData.body}
+        </Markdown>
       </article>
       <hr />
       <Footer />

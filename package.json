@@ -22,6 +22,7 @@
     "react": "^16.13.0",
     "react-content-loader": "^5.0.2",
     "react-dom": "^16.13.0",
+    "react-modal-image": "^2.5.0",
     "reading-time": "^1.2.0",
     "text-ellipsis": "^1.0.3"
   },

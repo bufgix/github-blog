@@ -88,11 +88,12 @@ Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) da
 Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim. Temelde aynı şeyi yapıyor olsa da Projeyi [Next.js](https://nextjs.org/) ile yazarak SEO friendly olmasını sağladım.
 
 ## TODOS
-- Footer
+- ~~Footer~~
 - Social links
-- Yorum ve reaction entegrasyonu
+- Comments ve reaction implementation
 - Pagination
 - Error Handling
+- ~~Add image viewer~~
 
 ## Author
 

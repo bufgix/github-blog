@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> A blog system that using Github Issues
+> A blog system that uses Github Issues
 
 ### 🏠 [Homepage](https://github-blog.now.sh/)
 
@@ -19,7 +19,7 @@
 
 [TURKÇE](https://github.com/bufgix/github-blog/blob/master/READMETR.md)
 
-The blog system you know, but all of the backends is connected to the Github. All blog posts are linked to the issues of a repo that you want.
+The usual blog system. Except, all the backend is connected to Github. All blog posts are linked to the issues of a repo that you want.
 
 ## Installation
 

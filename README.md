@@ -39,7 +39,7 @@ then come to `config.js` and write your information
 
 ```javascript
 export default {
-  // Githu username
+  // Github username
   username: "bufgix",
   // Repo name where you will write your blogs
   repoName: "bufgix.github.io"

@@ -11,83 +11,89 @@
   </a>
 </p>
 
-> A blog system that using Github Issues 
+> A blog system that using Github Issues
 
 ### 🏠 [Homepage](https://github-blog.now.sh/)
 
 ![banner](https://i.hizliresim.com/O5vCIe.png)
 
-Bildiğiniz blog sistemi fakat backendinin tamamı Github altyapısına bağlı. Tüm blog yazıları istediğiniz bir reponun issue'lerine bağlı.
+The blog system you know, but all of the backends is connected to the Github. All blog posts are linked to the issues of a repo that you want.
 
-## Yükleme
-Repoyu dosya sistemimize indirin
+## Installation
+
+Download the repo to your file system
 
 ```sh
 $ git clone https://github.com/bufgix/github-blog && cd github-blog
 ```
 
-Gerekli bağımlıkları yükleyin
+Install the required dependencies
 
 ```sh
 $ yarn
-# veya
+# or
 $ npm install
 ```
 
-ardından `config.js` dosyasına gelip bilgilerinizi yazın
+then come to `config.js` and write your information
 
 ```javascript
 export default {
-   // Github kullanıcı adınız
-  username: "bufgix", 
-   // Profilinize bağlı ve bloglarınızı yazacağınız repo ismi
-  repoName: "bufgix.github.io"  
+  // Githu username
+  username: "bufgix",
+  // Repo name where you will write your blogs
+  repoName: "bufgix.github.io"
 };
 ```
 
-Github-blog, verileri çekmek için graphql kullanan [Github API V4](https://developer.github.com/v4/)'ü kullanıyor. Bu yüzden [Github access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)'e ihtiyaç var. Bir token oluşturup;
+Github-blog uses [Github API V4](https://developer.github.com/v4/), which uses graphql to pull data. That's why [Github access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) is needed. Create a token and give the following permissions
+
 - read:user
 - user:email
 - user:follow
 
-izinlerini vemelisiniz. 
+Copy the token and paste it into a `.env` file as follows
 
-Token'i kopyalayın ve `.env` isminde bir dosya içine aşağıdaki gibi yapıştırın
 ```env
 GITHUB_TOKEN=0f49a4540d7efc7272533bc5ba23243da8de8ecd
 ```
-Ardından blogunuzu localde çalıştırmak için
+
+Then to run your blog locally
 
 ```sh
 yarn dev
-# veya 
+# or
 npm run dev
 ```
 
-## Uygulamayı yayınlama
+## Publising Your Blog
 
-Blogunuz istediğiniz bir VPS'de yayınlayabilceğiniz gibi, Ben hem kolay hem de ücretsiz olan [zeit.co](https://zeit.co/)'yu kullanıyoum. Blogunuzu zeit'e yüklemek için [Now CLI](https://zeit.co/download)'yi indirin. Ardından github tokeni, `Now CLI`'a ekleyin
+I use [zeit.co](https://zeit.co/), which is both easy and free. Download [Now CLI](https://zeit.co/download) to upload your blog to zeit. Then add the github token to the Now CLI
 
 ```sh
 $ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
 ```
 
-
-Uygulamanızı şu komutla yayına alın
+Publish your application with this command
 
 ```sh
 $ now deploy
 ```
+
 Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) dan uygulamayı takip edebilirsiniz.
 
+## Publishing Articles
 
-## Yazı Yayınlama
-`config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
+Submit a issue to the issues section of the repo that you specified in `config.json`. 
+Then create a label named `blog` and add it to your issue. Please note that issues without blog tag will not be shown. You can also create other tags and show what your post is about.
 
 ---
-Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim. Temelde aynı şeyi yapıyor olsa da Projeyi [Next.js](https://nextjs.org/) ile yazarak SEO friendly olmasını sağladım.
+
+I inspired the project from [this](https://github.com/saadpasta/react-blog-github) repo. Although basically doing the same, I made the project write with [Next.js](https://nextjs.org/) to be SEO friendly
+
 
 ## TODOS
+
 - ~~Footer~~
 - Social links
 - Comments ve reaction implementation
@@ -99,13 +105,13 @@ Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim.
 
 👤 **bufgix**
 
-* Website: http://www.bufgix.space
-* Twitter: [@bufgix](https://twitter.com/bufgix)
-* Github: [@bufgix](https://github.com/bufgix)
+- Website: http://www.bufgix.space
+- Twitter: [@bufgix](https://twitter.com/bufgix)
+- Github: [@bufgix](https://github.com/bufgix)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bufgix/github-blog/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bufgix/github-blog/issues).
 
 ## Show your support
 
@@ -116,5 +122,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2020 [bufgix](https://github.com/bufgix).<br />
 This project is [MIT](https://github.com/bufgix/github-blog/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

@@ -4,7 +4,7 @@ import config from "../config";
 function Footer() {
   return (
     <React.Fragment>
-      <footer className="uk-flex uk-flex-between uk-margin-top uk-margin-bottom">
+      <footer className="uk-margin-top uk-margin-bottom uk-flex">
         <div>
           <a
             target="_blank"
@@ -15,6 +15,7 @@ function Footer() {
           </a>
           's blog
         </div>
+        <div className="uk-margin-small-left uk-margin-small-right">•</div>
         <div>
           <a
             target="_blank"

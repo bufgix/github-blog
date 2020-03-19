@@ -71,7 +71,7 @@ npm run dev
 I use [zeit.co](https://zeit.co/), which is both easy and free. Download [Now CLI](https://zeit.co/download) to upload your blog to zeit. Then add the github token to the Now CLI
 
 ```sh
-$ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
+$ now secrets add GITHUB_TOKEN <YOUR_GITHUB_TOKEN>
 ```
 
 Publish your application with this command

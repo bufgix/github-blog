@@ -15,6 +15,14 @@ function FullScreenImage({ ...props }) {
   return <ModalImage small={props.src} large={props.src} />;
 }
 
+function Link({ children, ...props }) {
+  return (
+    <a href={props.href} target="_blank">
+      {children}
+    </a>
+  );
+}
+
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
     hljs.initHighlightingOnLoad();
@@ -43,6 +51,9 @@ function DetailView({ blogData, router }) {
             overrides: {
               img: {
                 component: FullScreenImage
+              },
+              a: {
+                component: Link
               }
             }
           }}

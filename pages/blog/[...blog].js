@@ -34,6 +34,7 @@ function DetailView({ blogData, router }) {
         <ProfileBar className="uk-margin-top uk-margin-bottom" />
         <Markdown options={{ forceBlock: true }}>{blogData.body}</Markdown>
       </article>
+      <hr />
       <Footer />
     </Container>
   );

@@ -4,8 +4,7 @@ import config from "../config";
 function Footer() {
   return (
     <React.Fragment>
-      <hr />
-      <footer className="uk-flex uk-flex-between">
+      <footer className="uk-flex uk-flex-between uk-margin-top uk-margin-bottom">
         <div>
           <a
             target="_blank"

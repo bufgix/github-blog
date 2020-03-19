@@ -82,7 +82,7 @@ Publish your application with this command
 $ now deploy
 ```
 
-Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) dan uygulamayı takip edebilirsiniz.
+After setting your project name, you can follow the application from zeit.co.
 
 ## Publishing Articles
 

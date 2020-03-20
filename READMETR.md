@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> A blog system that using Github Issues 
+> A blog system that using Github Issues
 
 ### 🏠 [Homepage](https://github-blog.now.sh/)
 
@@ -20,6 +20,7 @@
 Bildiğiniz blog sistemi fakat backendinin tamamı Github altyapısına bağlı. Tüm blog yazıları istediğiniz bir reponun issue'lerine bağlı.
 
 ## Yükleme
+
 Repoyu dosya sistemimize indirin
 
 ```sh
@@ -38,29 +39,34 @@ ardından `config.js` dosyasına gelip bilgilerinizi yazın
 
 ```javascript
 export default {
-   // Github kullanıcı adınız
-  username: "bufgix", 
-   // Profilinize bağlı ve bloglarınızı yazacağınız repo ismi
-  repoName: "bufgix.github.io"  
+  // Github kullanıcı adınız
+  username: "bufgix",
+  // Profilinize bağlı ve bloglarınızı yazacağınız repo ismi
+  repoName: "bufgix.github.io",
+  // İsterseniz github profilinizi baz alarak otomatik olarak CV ekleyebilirsiniz. Anasayfada gözükecektir
+  useGithubCv: true
 };
 ```
 
 Github-blog, verileri çekmek için graphql kullanan [Github API V4](https://developer.github.com/v4/)'ü kullanıyor. Bu yüzden [Github access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)'e ihtiyaç var. Bir token oluşturup;
+
 - read:user
 - user:email
 - user:follow
 
-izinlerini vemelisiniz. 
+izinlerini vemelisiniz.
 
 Token'i kopyalayın ve `.env` isminde bir dosya içine aşağıdaki gibi yapıştırın
+
 ```env
 GITHUB_TOKEN=0f49a4540d7efc7272533bc5ba23243da8de8ecd
 ```
+
 Ardından blogunuzu localde çalıştırmak için
 
 ```sh
 yarn dev
-# veya 
+# veya
 npm run dev
 ```
 
@@ -72,40 +78,34 @@ Blogunuz istediğiniz bir VPS'de yayınlayabilceğiniz gibi, Ben hem kolay hem d
 $ now secrets add GITHUB_TOKEN <GITHUB_TOKENINIZ>
 ```
 
-
 Uygulamanızı şu komutla yayına alın
 
 ```sh
 $ now deploy
 ```
+
 Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) dan uygulamayı takip edebilirsiniz.
 
-
 ## Yazı Yayınlama
+
 `config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
 
 ---
+
 Projeyi [bu](https://github.com/saadpasta/react-blog-github) repodan esinlendim. Temelde aynı şeyi yapıyor olsa da Projeyi [Next.js](https://nextjs.org/) ile yazarak SEO friendly olmasını sağladım.
 
-## TODOS
-- ~~Footer~~
-- Social links
-- Comments ve reaction implementation
-- Pagination
-- Error Handling
-- ~~Add image viewer~~
 
 ## Author
 
 👤 **bufgix**
 
-* Website: http://www.bufgix.space
-* Twitter: [@bufgix](https://twitter.com/bufgix)
-* Github: [@bufgix](https://github.com/bufgix)
+- Website: http://www.bufgix.space
+- Twitter: [@bufgix](https://twitter.com/bufgix)
+- Github: [@bufgix](https://github.com/bufgix)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bufgix/github-blog/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bufgix/github-blog/issues).
 
 ## Show your support
 
@@ -116,5 +116,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2020 [bufgix](https://github.com/bufgix).<br />
 This project is [MIT](https://github.com/bufgix/github-blog/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

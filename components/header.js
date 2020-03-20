@@ -50,11 +50,16 @@ function Header({ profile }) {
           </div>
         )}
       </div>
-      <div className="uk-text-meta uk-margin-small-top">
-        <a target="_blank" href={`https://github-cv.now.sh/${config.username}`}>
-          RÉSUMÉ
-        </a>
-      </div>
+      {config.useGithubCv && (
+        <div className="uk-text-meta uk-margin-small-top">
+          <a
+            target="_blank"
+            href={`https://github-cv.now.sh/${config.username}`}
+          >
+            RÉSUMÉ
+          </a>
+        </div>
+      )}
     </div>
   );
 }

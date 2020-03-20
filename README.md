@@ -44,7 +44,10 @@ export default {
   // Github username
   username: "bufgix",
   // Repo name where you will write your blogs
-  repoName: "bufgix.github.io"
+  repoName: "bufgix.github.io",
+  // If you want, you can automatically add a CV that based
+  // on your github profile. It will appear on the homepage
+  useGithubCv: true
 };
 ```
 
@@ -86,13 +89,12 @@ After setting your project name, you can follow the application from zeit.co.
 
 ## Publishing Articles
 
-Submit a issue to the issues section of the repo that you specified in `config.json`. 
+Submit a issue to the issues section of the repo that you specified in `config.json`.
 Then create a label named `blog` and add it to your issue. Please note that issues without blog tag will not be shown. You can also create other tags and show what your post is about.
 
 ---
 
 I inspired the project from [this](https://github.com/saadpasta/react-blog-github) repo. Although basically doing the same, I made the project write with [Next.js](https://nextjs.org/) to be SEO friendly
-
 
 ## TODOS
 
@@ -102,7 +104,7 @@ I inspired the project from [this](https://github.com/saadpasta/react-blog-githu
 - Pagination
 - ~~Error Handling~~
 - ~~Add image viewer~~
-- [Github-CV](https://github.com/bufgix/github-cv) integration
+- ~~[Github-CV](https://github.com/bufgix/github-cv) integration~~
 
 ## Author
 

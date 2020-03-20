@@ -100,8 +100,9 @@ I inspired the project from [this](https://github.com/saadpasta/react-blog-githu
 - Social links
 - Comments ve reaction implementation
 - Pagination
-- Error Handling
+- ~~Error Handling~~
 - ~~Add image viewer~~
+- [Github-CV](https://github.com/bufgix/github-cv) integration
 
 ## Author
 

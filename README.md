@@ -105,6 +105,7 @@ I inspired the project from [this](https://github.com/saadpasta/react-blog-githu
 - ~~Error Handling~~
 - ~~Add image viewer~~
 - ~~[Github-CV](https://github.com/bufgix/github-cv) integration~~
+- Filter by tags
 
 ## Author
 

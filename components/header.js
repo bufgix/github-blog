@@ -2,6 +2,15 @@ import React from "react";
 import config from "../config";
 
 function Header({ profile }) {
+  const [ready, setReady] = React.useState(false);
+
+  // Most stupid solution. But it works
+  React.useEffect(() => {
+    setTimeout(() => {
+      setReady(true);
+    }, 0);
+  });
+
   return (
     <div className="uk-container uk-container-expand uk-text-center uk-align-center uk-padding">
       <img
@@ -17,48 +26,53 @@ function Header({ profile }) {
         {profile.name}
       </h1>
       <p className="uk-text-meta uk-margin-remove-top">{profile.bio}</p>
-      <div
-        className="uk-grid-small uk-margin-small-top uk-flex-center uk-text-middle"
-        uk-grid="true"
-      >
-        {profile.email && (
-          <div className="uk-text-meta">
-            <a href={`mailto:${profile.email}`} target="_blank">
-              <span uk-icon="icon: mail" />
-              <span className="uk-visible@m"> {profile.email}</span>
-            </a>
-          </div>
-        )}
-        {profile.websiteUrl && (
-          <div className="uk-text-meta">
-            <a href={profile.websiteUrl} target="_blank">
-              <span uk-icon="icon: home" />
-              <span className="uk-visible@m "> {profile.websiteUrl}</span>
-            </a>
-          </div>
-        )}
-        {profile.location && (
-          <div className="uk-text-meta">
-            <span uk-icon="icon: location" />
-            <span className="uk-visible@m">{profile.location}</span>
-          </div>
-        )}
-        {profile.company && (
-          <div className="uk-text-meta">
-            <span uk-icon="icon: bolt" />
-            <span className="uk-visible@m">{profile.company}</span>
-          </div>
-        )}
-      </div>
-      {config.useGithubCv && (
-        <div className="uk-text-meta uk-margin-small-top">
-          <a
-            target="_blank"
-            href={`https://github-cv.now.sh/${config.username}`}
+      {ready && (
+        <React.Fragment>
+          <div
+            className="uk-grid-small uk-margin-small-top uk-flex-center uk-text-middle"
+            uk-grid="true"
           >
-            RÉSUMÉ
-          </a>
-        </div>
+            {profile.email && (
+              <div className="uk-text-meta">
+                <a href={`mailto:${profile.email}`} target="_blank">
+                  <span uk-icon="icon: mail" />
+                  <span className="uk-visible@m"> {profile.email}</span>
+                </a>
+              </div>
+            )}
+            {profile.websiteUrl && (
+              <div className="uk-text-meta">
+                <a href={profile.websiteUrl} target="_blank">
+                  <span uk-icon="icon: home" />
+                  <span className="uk-visible@m "> {profile.websiteUrl}</span>
+                </a>
+              </div>
+            )}
+            {profile.location && (
+              <div className="uk-text-meta">
+                <span uk-icon="icon: location" />
+                <span className="uk-visible@m">{profile.location}</span>
+              </div>
+            )}
+            {profile.company && (
+              <div className="uk-text-meta">
+                <span uk-icon="icon: bolt" />
+                <span className="uk-visible@m">{profile.company}</span>
+              </div>
+            )}
+          </div>
+
+          {config.useGithubCv && (
+            <div className="uk-text-meta uk-margin-small-top">
+              <a
+                target="_blank"
+                href={`https://github-cv.now.sh/${config.username}`}
+              >
+                RÉSUMÉ
+              </a>
+            </div>
+          )}
+        </React.Fragment>
       )}
     </div>
   );

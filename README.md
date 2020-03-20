@@ -97,7 +97,7 @@ I inspired the project from [this](https://github.com/saadpasta/react-blog-githu
 ## TODOS
 
 - ~~Footer~~
-- Social links
+- ~~Social links~~
 - Comments ve reaction implementation
 - Pagination
 - ~~Error Handling~~

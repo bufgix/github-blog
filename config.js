@@ -1,4 +1,5 @@
 export default {
   username: "bufgix",
-  repoName: "bufgix.github.io"
+  repoName: "bufgix.github.io",
+  useGithubCv: true
 };

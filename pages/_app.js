@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import config from "../config";
+import "./blog/detail.scss";
 
 function App({ Component, pageProps }) {
   return (

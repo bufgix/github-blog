@@ -1,0 +1,14 @@
+.reactionsList {
+    width: 100%;
+    border: 1px solid #e1e4e8;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .reactionsListItem {
+    display: inline-block;
+    padding: 9px 15px 9px 15px;
+    border-right: 1px solid #e1e4e8;
+  }
+  

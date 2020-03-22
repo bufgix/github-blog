@@ -45,6 +45,12 @@ const GET_SINGLE_BLOG = number => `
       }
       updatedAt
       createdAt
+      reactions(first: 100) {
+        totalCount,
+        nodes {
+          content
+        }
+      }
     }
   }
 }

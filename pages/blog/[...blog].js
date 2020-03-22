@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "next/router";
-import { Container, ProfileBar } from "../../components";
+import { Container, ProfileBar, ReactionsBar } from "../../components";
 import { getSingleBlogData, redirect } from "../../utils";
 import ModalImage from "react-modal-image";
 import Markdown from "markdown-to-jsx";
@@ -8,7 +8,6 @@ import Moment from "moment";
 import readingTime from "reading-time";
 import hljs from "highlight.js";
 
-import "./detail.scss";
 import Footer from "../../components/footer";
 
 function FullScreenImage({ ...props }) {
@@ -26,7 +25,8 @@ function Link({ children, ...props }) {
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
     hljs.initHighlightingOnLoad();
-  });
+  }, []);
+
   return (
     <Container className="uk-margin-top">
       <ion-icon
@@ -61,6 +61,7 @@ function DetailView({ blogData, router }) {
           {blogData.body}
         </Markdown>
       </article>
+      <ReactionsBar reactionsData={blogData.reactions} />
       <hr />
       <Footer />
     </Container>

@@ -6,6 +6,7 @@ import ModalImage from "react-modal-image";
 import Markdown from "markdown-to-jsx";
 import Moment from "moment";
 import readingTime from "reading-time";
+import config from "../../config";
 import hljs from "highlight.js";
 
 import Footer from "../../components/footer";
@@ -25,6 +26,7 @@ function Link({ children, ...props }) {
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
     hljs.initHighlightingOnLoad();
+    document.title = `${blogData.title} - ${config.username}'s blog`
   }, []);
 
   return (

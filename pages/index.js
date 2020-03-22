@@ -1,9 +1,8 @@
 import React from "react";
 import { withRouter } from "next/router";
-import { Container, Header } from "../components";
+import { Container, Header, Footer } from "../components";
 import { BlogList } from "../components/blog";
 import { getBlogData, getUserData } from "../utils";
-import Footer from "../components/footer";
 import Swal from "sweetalert2";
 
 function Blog({ blogData, profileData, errors, router: { query } }) {
@@ -50,4 +49,5 @@ Blog.getInitialProps = async () => {
     };
   }
 };
+
 export default withRouter(Blog);

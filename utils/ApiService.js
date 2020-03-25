@@ -1,10 +1,18 @@
 import Axios from "axios";
 import config from "../config";
 
-const GET_BLOG = `
+String.prototype.capitalizeWords = function() {
+  return this.split(" ")
+    .map(function(ele) {
+      return ele[0].toUpperCase() + ele.slice(1).toLowerCase();
+    })
+    .join(" ");
+};
+
+const GET_BLOG = (label = "blog") => `
   {
     repository(owner: "${config.username}", name: "${config.repoName}") {
-      issues(first: 100, states: OPEN, filterBy: { labels: "blog", createdBy: "${config.username}" }) {
+      issues(first: 100, states: OPEN, filterBy: { labels: "${label}", createdBy: "${config.username}" }) {
         nodes {
           title
           bodyText
@@ -77,12 +85,16 @@ const ApiService = Axios.create({
   }
 });
 
-const getBlogData = async () => {
+const getBlogData = async (label = "blog") => {
+  console.log(label);
   try {
-    const res = await ApiService.post("/graphql", { query: GET_BLOG });
+    const res = await ApiService.post("/graphql", {
+      query: GET_BLOG(label.capitalizeWords())
+    });
     if (res.data.errors) {
       return Promise.reject({ errors: res.data.errors });
     }
+    console.log(res.data.repository);
     return Promise.resolve(res.data.data?.repository?.issues?.nodes);
   } catch (err) {
     return Promise.reject({ error: err.message });

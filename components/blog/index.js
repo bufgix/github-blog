@@ -24,15 +24,20 @@ function BlogCard({ data }) {
       <div className="uk-flex uk-flex-between uk-text-middle">
         <div>
           {data.labels.nodes
-            .filter(label => label.name !== "blog")
+            .filter(label => label.name !== "Blog")
             .map((label, index) => (
-              <span
-                className="uk-label uk-margin-small-right"
-                key={index}
-                style={{ backgroundColor: `#${label.color}` }}
-              >
-                {label.name}
-              </span>
+              <Link href={{ pathname: `/tag/${label.name}` }}>
+                <span
+                  className="uk-label uk-margin-small-right"
+                  key={index}
+                  style={{
+                    backgroundColor: `#${label.color}`,
+                    cursor: "pointer"
+                  }}
+                >
+                  {label.name}
+                </span>
+              </Link>
             ))}
         </div>
         <div className="uk-text-meta">

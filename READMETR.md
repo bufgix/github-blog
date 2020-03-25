@@ -88,7 +88,7 @@ Proje isminizi kendinize göre ayarladıktan sonra [zeit.co](https://zeit.co) da
 
 ## Yazı Yayınlama
 
-`config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
+`config.json` da belirtiğiniz reponun `issues` bölümüne bir issue açın. Ardından `Blog` isminde bir label yaratıp yazınıza ekleyin. Unutmayın `blog` tagı taşımayan issueler gösterilmiyecektir. Ayrıca başka başka tag'ler oluşturup yazınızın neyler ilgili oldugunu gösterebilirsiniz.
 
 ---
 

@@ -90,7 +90,7 @@ After setting your project name, you can follow the application from zeit.co.
 ## Publishing Articles
 
 Submit a issue to the issues section of the repo that you specified in `config.json`.
-Then create a label named `blog` and add it to your issue. Please note that issues without blog tag will not be shown. You can also create other tags and show what your post is about.
+Then create a label named `Blog` and add it to your issue. Please note that issues without blog tag will not be shown. You can also create other tags and show what your post is about.
 
 ---
 

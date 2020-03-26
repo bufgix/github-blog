@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter } from "next/router";
-import { Container, ProfileBar, ReactionsBar } from "../../components";
+import { Container, ProfileBar, ReactionsBar, FullScreenImage, ArticleLink } from "../../components";
+import { CommentList } from "../../components/blog";
 import { getSingleBlogData, redirect } from "../../utils";
-import ModalImage from "react-modal-image";
 import Markdown from "markdown-to-jsx";
 import Moment from "moment";
 import readingTime from "reading-time";
@@ -11,22 +11,11 @@ import hljs from "highlight.js";
 
 import Footer from "../../components/footer";
 
-function FullScreenImage({ ...props }) {
-  return <ModalImage small={props.src} large={props.src} />;
-}
-
-function Link({ children, ...props }) {
-  return (
-    <a href={props.href} target="_blank">
-      {children}
-    </a>
-  );
-}
 
 function DetailView({ blogData, router }) {
   React.useEffect(() => {
     hljs.initHighlightingOnLoad();
-    document.title = `${blogData.title} - ${config.username}'s blog`
+    document.title = `${blogData.title} - ${config.username}'s blog`;
   }, []);
 
   return (
@@ -55,7 +44,7 @@ function DetailView({ blogData, router }) {
                 component: FullScreenImage
               },
               a: {
-                component: Link
+                component: ArticleLink
               }
             }
           }}
@@ -65,6 +54,7 @@ function DetailView({ blogData, router }) {
       </article>
       <ReactionsBar reactionsData={blogData.reactions} />
       <hr />
+      <CommentList commentData={blogData.comments} />
       <Footer />
     </Container>
   );

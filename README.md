@@ -100,8 +100,8 @@ I inspired the project from [this](https://github.com/saadpasta/react-blog-githu
 
 - ~~Footer~~
 - ~~Social links~~
-- Comments implementation
-- Reaction implementation
+- ~~Comments implementation~~
+- ~~Reaction implementation~~
 - Pagination
 - ~~Error Handling~~
 - ~~Add image viewer~~

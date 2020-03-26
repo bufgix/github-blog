@@ -52,6 +52,9 @@ const GET_SINGLE_BLOG = number => `
             totalCount
             nodes {
               content
+              user {
+                login
+              }
             }
           }
         }
@@ -76,6 +79,9 @@ const GET_SINGLE_BLOG = number => `
         totalCount,
         nodes {
           content
+          user {
+            login
+          }
         }
       }
     }

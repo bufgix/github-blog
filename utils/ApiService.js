@@ -37,6 +37,25 @@ const GET_SINGLE_BLOG = number => `
 {
   repository(owner: "${config.username}", name: "${config.repoName}") {
     issue(number: ${number}){
+      comments(first: 100) {
+        totalCount
+        nodes {
+          author {
+            login
+            avatarUrl
+          }
+          body
+          createdAt
+          updatedAt
+          lastEditedAt
+          reactions(first: 100) {
+            totalCount
+            nodes {
+              content
+            }
+          }
+        }
+      }
       title
       body
       bodyHTML
@@ -64,6 +83,8 @@ const GET_SINGLE_BLOG = number => `
 }
 `;
 
+console.log(GET_SINGLE_BLOG(1))
+
 const GET_USER = `
 {
   user(login: "${config.username}"){
@@ -86,7 +107,6 @@ const ApiService = Axios.create({
 });
 
 const getBlogData = async (label = "blog") => {
-  console.log(label);
   try {
     const res = await ApiService.post("/graphql", {
       query: GET_BLOG(label.capitalizeWords())
@@ -94,7 +114,6 @@ const getBlogData = async (label = "blog") => {
     if (res.data.errors) {
       return Promise.reject({ errors: res.data.errors });
     }
-    console.log(res.data.repository);
     return Promise.resolve(res.data.data?.repository?.issues?.nodes);
   } catch (err) {
     return Promise.reject({ error: err.message });

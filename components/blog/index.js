@@ -26,10 +26,9 @@ function BlogCard({ data }) {
           {data.labels.nodes
             .filter(label => label.name !== "Blog")
             .map((label, index) => (
-              <Link href={{ pathname: `/tag/${label.name}` }}>
+              <Link href={{ pathname: `/tag/${label.name}` }} key={index}>
                 <span
                   className="uk-label uk-margin-small-right"
-                  key={index}
                   style={{
                     backgroundColor: `#${label.color}`,
                     cursor: "pointer"
@@ -53,4 +52,5 @@ function BlogCard({ data }) {
   );
 }
 
-export { BlogList };
+import CommentList from "./Comment";
+export { BlogList, CommentList };

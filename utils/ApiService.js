@@ -89,8 +89,6 @@ const GET_SINGLE_BLOG = number => `
 }
 `;
 
-console.log(GET_SINGLE_BLOG(1))
-
 const GET_USER = `
 {
   user(login: "${config.username}"){

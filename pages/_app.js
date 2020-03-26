@@ -17,7 +17,7 @@ function App({ Component, pageProps }) {
         />
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/nord.min.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css"
         />
         <link
           rel="stylesheet"

@@ -6,9 +6,6 @@ import { getBlogData, getUserData } from "../utils";
 import Swal from "sweetalert2";
 
 function Blog({ blogData, profileData, errors, router: { query } }) {
-  if (errors) {
-    return errors.map(err => <p>{JSON.stringify(err)}</p>);
-  }
   React.useEffect(() => {
     if (query.notFound) {
       Swal.fire({
@@ -16,7 +13,7 @@ function Blog({ blogData, profileData, errors, router: { query } }) {
         text: "Article Not Found",
         icon: "error",
         timer: 2000,
-        timerProgressBar: true
+        timerProgressBar: true,
       });
       window.history.replaceState(null, null, window.location.pathname);
     }
@@ -32,20 +29,23 @@ function Blog({ blogData, profileData, errors, router: { query } }) {
   );
 }
 
-Blog.getInitialProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const [blogData, profileData] = await Promise.all([
       getBlogData(),
-      getUserData()
+      getUserData(),
     ]);
+
     blogData.reverse();
     return {
-      blogData,
-      profileData
+      props: {
+        blogData,
+        profileData,
+      },
     };
   } catch (error) {
     return {
-      errors: error.errors
+      props: {},
     };
   }
 };

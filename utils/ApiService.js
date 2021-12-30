@@ -1,9 +1,9 @@
 import Axios from "axios";
 import config from "../config";
 
-String.prototype.capitalizeWords = function() {
+String.prototype.capitalizeWords = function () {
   return this.split(" ")
-    .map(function(ele) {
+    .map(function (ele) {
       return ele[0].toUpperCase() + ele.slice(1).toLowerCase();
     })
     .join(" ");
@@ -33,7 +33,7 @@ const GET_BLOG = (label = "blog") => `
   }
 `;
 
-const GET_SINGLE_BLOG = number => `
+const GET_SINGLE_BLOG = (number) => `
 {
   repository(owner: "${config.username}", name: "${config.repoName}") {
     issue(number: ${number}){
@@ -106,14 +106,14 @@ const GET_USER = `
 const ApiService = Axios.create({
   baseURL: "https://api.github.com",
   headers: {
-    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
-  }
+    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+  },
 });
 
 const getBlogData = async (label = "blog") => {
   try {
     const res = await ApiService.post("/graphql", {
-      query: GET_BLOG(label.capitalizeWords())
+      query: GET_BLOG(label.capitalizeWords()),
     });
     if (res.data.errors) {
       return Promise.reject({ errors: res.data.errors });
@@ -136,10 +136,10 @@ const getUserData = async () => {
   }
 };
 
-const getSingleBlogData = async number => {
+const getSingleBlogData = async (number) => {
   try {
     const res = await ApiService.post("/graphql", {
-      query: GET_SINGLE_BLOG(number)
+      query: GET_SINGLE_BLOG(number),
     });
     if (res.data.errors) {
       return Promise.reject({ errors: res.data.errors });
